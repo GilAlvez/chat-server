@@ -19,3 +19,19 @@ model User {
   createdAt Int?
   updatedAt Int?
 }
+
+model Room {
+  id        String   @id
+  name      String?
+  type      RoomType
+  imageUrl  String?
+  data      Json?
+  metadata  Json?
+  createdAt Int?
+  updatedAt Int?
+}
+
+enum RoomType {
+  GROUP
+  PRIVATE
+}
