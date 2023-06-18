@@ -18,6 +18,8 @@ model User {
   lastSeen  Int?
   createdAt Int?
   updatedAt Int?
+
+  RoomMembership RoomMembership[]
 }
 
 model Room {
@@ -29,6 +31,24 @@ model Room {
   metadata  Json?
   createdAt Int?
   updatedAt Int?
+
+  RoomMembership RoomMembership[]
+}
+
+model RoomMembership {
+  userId String
+  roomId String
+  role   Role
+
+  user User @relation(fields: [userId], references: [id])
+  room Room @relation(fields: [roomId], references: [id])
+
+  @@id([userId, roomId])
+}
+
+enum Role {
+  ADMIN
+  MEMBER
 }
 
 enum RoomType {
