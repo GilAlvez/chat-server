@@ -38,7 +38,7 @@ model Room {
 }
 
 model RoomMembership {
-  role   Role
+  role   RoomRole
   userId String
   roomId String
 
@@ -49,13 +49,13 @@ model RoomMembership {
 }
 
 model Message {
-  id               String      @id
-  status           Status?
+  id               String         @id
+  status           MessageStatus?
   type             MessageType
   data             Json?
   metadata         Json?
-  createdAt        DateTime    @default(now())
-  updatedAt        DateTime    @updatedAt
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
   userId           String
   roomId           String
   repliedMessageId String?
@@ -66,7 +66,7 @@ model Message {
   replies        Message[] @relation("MessageToMessage")
 }
 
-enum Role {
+enum RoomRole {
   ADMIN
   MEMBER
 }
@@ -76,7 +76,7 @@ enum RoomType {
   PRIVATE
 }
 
-enum Status {
+enum MessageStatus {
   SENT
   DELIVERED
   READ
