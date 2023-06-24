@@ -25,7 +25,7 @@ model User {
 
 model Room {
   id        String   @id
-  name      String?
+  name      String
   type      RoomType
   imageUrl  String?
   data      Json?
