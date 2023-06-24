@@ -9,3 +9,83 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        String   @id
+  firstName String
+  lastName  String?
+  imageUrl  String?
+  lastSeen  DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages Message[]
+  rooms    RoomMembership[]
+}
+
+model Room {
+  id        String   @id
+  name      String
+  type      RoomType
+  imageUrl  String?
+  data      Json?
+  metadata  Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages Message[]
+  members  RoomMembership[]
+}
+
+model RoomMembership {
+  role   RoomRole
+  userId String
+  roomId String
+
+  user User @relation(fields: [userId], references: [id])
+  room Room @relation(fields: [roomId], references: [id])
+
+  @@id([userId, roomId])
+}
+
+model Message {
+  id               String         @id
+  status           MessageStatus?
+  type             MessageType
+  data             Json?
+  metadata         Json?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  userId           String
+  roomId           String
+  repliedMessageId String?
+
+  user           User      @relation(fields: [userId], references: [id])
+  room           Room      @relation(fields: [roomId], references: [id])
+  repliedMessage Message?  @relation("MessageToMessage", fields: [repliedMessageId], references: [id])
+  replies        Message[] @relation("MessageToMessage")
+}
+
+enum RoomRole {
+  ADMIN
+  MEMBER
+}
+
+enum RoomType {
+  GROUP
+  PRIVATE
+}
+
+enum MessageStatus {
+  SENT
+  DELIVERED
+  READ
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  VIDEO
+  AUDIO
+  FILE
+}
