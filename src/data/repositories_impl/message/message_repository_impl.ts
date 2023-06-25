@@ -1,4 +1,4 @@
-import { IMessageRepository } from '.';
+import { IMessageRepository } from 'domain/repositories';
 
 import { IMessage } from 'domain/entities';
 
