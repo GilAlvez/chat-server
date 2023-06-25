@@ -1,4 +1,4 @@
 enum RoomType {
-  group = 'group',
-  private = 'private',
+  GROUP = 'GROUP',
+  PRIVATE = 'PRIVATE',
 }

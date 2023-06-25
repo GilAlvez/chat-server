@@ -1,6 +1,7 @@
 enum MessageType {
-  text = 'text',
-  image = 'image',
-  audio = 'audio',
-  file = 'file',
+  TEXT = 'TEXT',
+  IMAGE = 'IMAGE',
+  VIDEO = 'VIDEO',
+  AUDIO = 'AUDIO',
+  FILE = 'FILE',
 }

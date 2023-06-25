@@ -1,4 +1,4 @@
 enum RoomRole {
-  admin = 'admin',
-  member = 'member',
+  ADMIN = 'ADMIN',
+  MEMBER = 'MEMBER',
 }
