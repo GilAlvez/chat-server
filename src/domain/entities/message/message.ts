@@ -6,6 +6,7 @@ export interface IMessage<T1 = unknown, T2 = unknown> {
   data: T1;
   type: MessageType;
   status: MessageStatus;
+  roomId: string;
   metadata?: T2;
   createdAt?: Date;
   updatedAt?: Date;
