@@ -17,5 +17,7 @@
         "/src/data",
         "/src/data/repositories_impl",
         "/src/data/repositories_impl/message",
+        "/src/data/data_sources",
+        "/src/data/DTO",
     ],
 }
