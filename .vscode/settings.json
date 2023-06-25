@@ -2,4 +2,20 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
     },
+    "exportall.config.folderListener": [
+        // DOMAIN
+        "/src/domain/entities",
+        "/src/domain/entities/room",
+        "/src/domain/entities/message",
+        "/src/domain/entities/user",
+        "/src/domain/use_cases",
+        "/src/domain/use_cases/send_message",
+        "/src/domain/repositories_interfaces",
+        "/src/domain/repositories_interfaces/message",
+        "/src/domain/utils",
+        // DATA
+        "/src/data",
+        "/src/data/repositories_impl",
+        "/src/data/repositories_impl/message",
+    ],
 }

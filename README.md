@@ -8,8 +8,8 @@ The "Chat Server" is a personal study project focused at crafting a viable proto
 
 ## Technologies
 
--   **TypeScript**
--   **Fastify**
--   **Prisma**
--   **PostgreSQL**
--   **Docker**
+- **TypeScript**
+- **Fastify**
+- **Prisma**
+- **PostgreSQL**
+- **Docker**
