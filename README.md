@@ -10,12 +10,13 @@ The "Chat Server" is a personal study project focused on crafting a viable proto
 
 -   **TypeScript**
 -   **Docker**
--   **Prisma**
 
 ## Implementations
 This project applies Clean Architecture principles, promoting a clear separation between business logic (domain) and external operations (data). This structure facilitates swapping implementation technologies **without changing the business logic**, demonstrating its versatility and scalability.
 
 #### Database
+-  Prisma ORM
 -  PostgreSQL
+  
 #### Backend Framework
 -  Fastify
