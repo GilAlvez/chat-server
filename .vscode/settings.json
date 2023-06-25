@@ -3,6 +3,9 @@
         "source.fixAll.eslint": true,
     },
     "exportall.config.folderListener": [
-        "/src/domain/entities"
+        "/src/domain/entities",
+        "/src/domain/entities/room",
+        "/src/domain/entities/message",
+        "/src/domain/entities/user"
     ],
 }

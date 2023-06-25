@@ -1,4 +1,4 @@
-import { IUser } from '.';
+import { IUser } from '..';
 
 export interface IMessage<T1 = unknown, T2 = unknown> {
   id: string;
