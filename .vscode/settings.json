@@ -6,6 +6,10 @@
         "/src/domain/entities",
         "/src/domain/entities/room",
         "/src/domain/entities/message",
-        "/src/domain/entities/user"
+        "/src/domain/entities/user",
+        "/src/domain/use_cases",
+        "/src/domain/use_cases/send_message",
+        "/src/domain/repositories",
+        "/src/domain/repositories/message",
     ],
 }
