@@ -5,5 +5,5 @@ export interface ITextMessageData {
 }
 
 export interface ITextMessage extends IMessage<ITextMessageData> {
-  type: MessageType.text;
+  type: MessageType.TEXT;
 }

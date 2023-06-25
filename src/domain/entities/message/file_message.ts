@@ -8,5 +8,5 @@ export interface IFileMessageData {
 }
 
 export interface IFileMessage extends IMessage<IFileMessageData> {
-  type: MessageType.file;
+  type: MessageType.FILE;
 }

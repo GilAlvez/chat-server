@@ -7,5 +7,5 @@ export interface IImageMessageData {
 }
 
 export interface IImageMessage extends IMessage<IImageMessageData> {
-  type: MessageType.image;
+  type: MessageType.IMAGE;
 }

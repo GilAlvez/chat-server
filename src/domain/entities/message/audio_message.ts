@@ -10,5 +10,5 @@ export interface IAudioMessageData {
 }
 
 export interface IAudioMessage extends IMessage<IAudioMessageData> {
-  type: MessageType.audio;
+  type: MessageType.AUDIO;
 }
