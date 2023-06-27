@@ -3,7 +3,7 @@ import { IDataSource } from '.';
 import { IMessage } from 'domain/entities';
 
 import { PrismaClient } from '@prisma/client';
-import { MessageDTO } from 'data/DTO';
+import { MessageMapper } from 'data/mappers';
 
 export class PostgreDataSourceImpl implements IDataSource {
   private prisma: PrismaClient;
@@ -13,7 +13,7 @@ export class PostgreDataSourceImpl implements IDataSource {
   }
 
   async sendMessage(message: IMessage): Promise<void> {
-    const { user, ...data } = MessageDTO.fromEntity(message);
+    const data = MessageMapper.fromEntity(message);
     try {
       await this.prisma.message.create({ data });
     } catch (e) {
