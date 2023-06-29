@@ -1,6 +1,6 @@
 import { ISendMessageUseCase } from '.';
 
-import { IMessageRepository } from 'domain/repositories';
+import { IMessageRepository } from 'domain/repositories_interfaces';
 import { IMessage } from 'domain/entities';
 
 export class SendMessageUseCaseImpl implements ISendMessageUseCase {
