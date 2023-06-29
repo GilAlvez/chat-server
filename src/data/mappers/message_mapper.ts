@@ -1,5 +1,6 @@
 import { OutputMessageDTO, InputMessageDTO } from 'data/DTO';
 import { IMessage, IUser } from 'domain/entities';
+import { MessageStatus, MessageType } from 'domain/enums';
 
 export class MessageMapper implements InputMessageDTO {
   constructor(

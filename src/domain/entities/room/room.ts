@@ -1,3 +1,4 @@
+import { RoomType } from 'domain/enums';
 import { IUser } from '..';
 
 export interface IRoom {

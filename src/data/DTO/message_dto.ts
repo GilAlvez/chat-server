@@ -1,4 +1,5 @@
 import { IUser } from 'domain/entities';
+import { MessageStatus, MessageType } from 'domain/enums';
 
 export interface InputMessageDTO {
   id: string;
