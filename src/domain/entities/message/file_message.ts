@@ -1,3 +1,4 @@
+import { MessageType } from 'domain/enums';
 import { IMessage } from '.';
 
 export interface IFileMessageData {

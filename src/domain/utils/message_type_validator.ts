@@ -6,6 +6,7 @@ import {
   ITextMessage,
   IVideoMessage,
 } from 'domain/entities';
+import { MessageType } from 'domain/enums/message_type';
 
 export class MessageTypeValidator {
   public static isTextMessage(message: IMessage): message is ITextMessage {

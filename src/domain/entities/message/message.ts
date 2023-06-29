@@ -1,3 +1,4 @@
+import { MessageStatus, MessageType } from 'domain/enums';
 import { IUser } from '..';
 
 export interface IMessage<T1 = unknown, T2 = unknown> {
