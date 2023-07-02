@@ -6,6 +6,7 @@ import { PostgreDataSourceImpl } from 'data/data_sources';
 import { MessageControllerImpl } from 'presentation/controllers';
 import { MessageRepositoryImpl } from 'data/repositories_impl';
 import { SendMessageRouteImpl, FastifyRoutesImpl } from 'presentation/routes/fastify';
+import { PrismaClient } from '@prisma/client';
 
 export class InjectionContainer {
   private static container = awilix.createContainer();
@@ -16,16 +17,22 @@ export class InjectionContainer {
 
   public static registerDependencies(app: FastifyInstance) {
     this.container.register({
-      // App
+      // Application
       app: awilix.asValue(app),
+      prisma: awilix.asValue(new PrismaClient()),
+
       // Use Cases
       sendMessageUseCase: awilix.asClass(SendMessageUseCaseImpl),
+
       // Repositories
       messageRepository: awilix.asClass(MessageRepositoryImpl),
-      // Data Source
+
+      // Data Sources
       dataSource: awilix.asClass(PostgreDataSourceImpl),
+
       // Controllers
       messageController: awilix.asClass(MessageControllerImpl),
+
       // Routes
       routes: awilix.asClass(FastifyRoutesImpl),
       sendMessageRoute: awilix.asClass(SendMessageRouteImpl),
